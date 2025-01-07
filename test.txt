@@ -1,0 +1,22 @@
+CREATE TABLE Student(
+    StuID int KEY NO_NULL VALID,
+    Name char[20] NOT_KEY NO_NULL VALID,
+    Age int NOT_KEY NO_NULL VALID
+) INTO MyDB.dbf;
+
+
+INSERT INTO Student VALUES(1, 'Alice', 20) IN MyDB.dbf;
+INSERT INTO Student VALUES(2, 'Bob', 22) IN MyDB.dbf;
+INSERT INTO Student VALUES(3, 'Carol', 23) IN MyDB.dbf;
+
+SELECT * FROM Student;
+SELECT * FROM Student WHERE StuID=2;
+
+
+UPDATE Student (
+    SET Age=25
+    WHERE StuID=2
+) IN MyDB.dbf;
+
+DELETE FROM Student WHERE StuID=3 IN MyDB.dbf;
+DROP TABLE Student IN MyDB.dbf;
