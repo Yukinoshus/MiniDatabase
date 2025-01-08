@@ -51,8 +51,6 @@ int RecordManager::writeRecords(const TableSchema& schema, char*** records, int 
     return 0;
 }
 
-
-
 int RecordManager::readRecords(const TableSchema& schema, char*** outRecords, int maxRecordNum) {
     std::ifstream ifs(m_datFileName.c_str(), std::ios::binary);
     if (!ifs.is_open()) {
@@ -81,7 +79,6 @@ int RecordManager::readRecords(const TableSchema& schema, char*** outRecords, in
         int fieldCountInFile = 0;
         ifs.read(reinterpret_cast<char*>(&recordCountInFile), sizeof(int));
         ifs.read(reinterpret_cast<char*>(&fieldCountInFile), sizeof(int));
-
 
         // 若匹配目标表
         if (std::strcmp(tableName, schema.sTableName) == 0) {
@@ -125,7 +122,7 @@ int RecordManager::readRecords(const TableSchema& schema, char*** outRecords, in
             }
             // 在本示例中，如果一个 .dat 里只存放一次表的 block，可以直接 break
             // 若可能有多个 block（同表多段），可以不 break
-        //    break;
+            break;
         }
         else {
             // 跳过这张表的所有记录

@@ -1,5 +1,4 @@
 #ifndef SHAREDDEFS_H
-
 #define SHAREDDEFS_H
 
 #include <cstring>

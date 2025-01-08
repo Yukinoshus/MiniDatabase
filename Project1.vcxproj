@@ -142,9 +142,6 @@
     <None Include="MyDB.dat" />
     <None Include="MyDB.dbf" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="test.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
